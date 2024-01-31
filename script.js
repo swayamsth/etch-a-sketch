@@ -1,10 +1,8 @@
 const container = document.querySelector("#container");
-let square = 16 * 16;
-for (let i = 1; i <= square; i++){
-    const grid = document.createElement("div");
-    grid.classList.add("grid");
-    container.appendChild(grid);
-}
+let gridSize = 16;
+let grid = gridSize * gridSize;
+
+createGrid(grid);
 
 const hover = document.querySelectorAll(".grid");
 hover.forEach(item => {
@@ -12,3 +10,11 @@ hover.forEach(item => {
         e.target.classList.add("hover");
     })
 });
+
+function createGrid(grid){
+    for (let i = 1; i <= grid; i++){
+        const grid = document.createElement("div");
+        grid.classList.add("grid");
+        container.appendChild(grid);
+    }
+}

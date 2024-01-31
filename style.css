@@ -1,3 +1,7 @@
+header p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #container{
     max-width: 960px;
     display: grid;
