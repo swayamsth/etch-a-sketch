@@ -1,8 +1,13 @@
 #container{
+    max-width: 960px;
     display: grid;
     grid-template-columns: repeat(16,10px);
     grid-template-rows: repeat(16,10px);
 }
 .grid {
     border: .25px solid;
+}
+
+.hover{
+    background-color: black;
 }
