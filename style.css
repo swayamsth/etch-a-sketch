@@ -1,5 +1,6 @@
-header p{
+p{
     font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 5px;
 }
 
 #container{
@@ -8,10 +9,21 @@ header p{
     grid-template-columns: repeat(16,10px);
     grid-template-rows: repeat(16,10px);
 }
+
 .grid {
     border: .25px solid;
 }
 
 .hover{
     background-color: black;
+}
+
+.buttons{
+    display: flex;
+    gap: 1rem;
+}
+
+.buttons .btn, .buttons .reset{
+    font-size: 5px;
+    margin-bottom: 0.5rem;
 }
