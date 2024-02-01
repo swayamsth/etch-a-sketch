@@ -1,5 +1,6 @@
 // Initialize grid
 const container = document.querySelector("#container");
+let maxGrid = 240;
 let gridSize = 16;
 let grid = gridSize * gridSize;
 
@@ -31,14 +32,12 @@ btn.addEventListener('click', () => {
     }
 })
 
+//Reset button
 const reset = document.querySelector(".reset");
 reset.addEventListener('click', () => {
     resetGrid();
     createGrid(grid);
     hover();
-
-    // hover state doesnst work add that shit
-    // add repeat block on css and shit so its gridSize by gridSize depending on the input
 })
 
 //Create Grid func
@@ -48,8 +47,8 @@ function createGrid(grid){
         grid.classList.add("grid");
         container.appendChild(grid);
     }
-    container.style.setProperty('grid-template-columns',`repeat(${Math.sqrt(grid)}, 10px)`);
-    container.style.setProperty('grid-template-rows',`repeat(${Math.sqrt(grid)}, 10px)`);
+    container.style.setProperty('grid-template-columns',`repeat(${Math.sqrt(grid)}, ${maxGrid/Math.sqrt(grid)}px)`);
+    container.style.setProperty('grid-template-rows',`repeat(${Math.sqrt(grid)}, ${maxGrid/Math.sqrt(grid)}px)`);
 }
 
 //Reset Grid func
