@@ -1,6 +1,6 @@
 // Initialize grid
 const container = document.querySelector("#container");
-let maxGrid = 240;
+let maxGrid = 500;
 let gridSize = 16;
 let grid = gridSize * gridSize;
 
