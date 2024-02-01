@@ -22,8 +22,8 @@ const btn = document.querySelector(".btn");
 btn.addEventListener('click', () => {
     gridSize = prompt("Enter Grid Size");
     if (gridSize <= 100){
-        resetGrid();
         grid = gridSize * gridSize;
+        resetGrid();
         createGrid(grid);
         hover();
     } else {
@@ -48,6 +48,8 @@ function createGrid(grid){
         grid.classList.add("grid");
         container.appendChild(grid);
     }
+    container.style.setProperty('grid-template-columns',`repeat(${Math.sqrt(grid)}, 10px)`);
+    container.style.setProperty('grid-template-rows',`repeat(${Math.sqrt(grid)}, 10px)`);
 }
 
 //Reset Grid func
