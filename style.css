@@ -16,7 +16,7 @@ p{
 }
 
 .hover{
-    background-color: black;
+    background-color: #000000;
 }
 
 .buttons{
@@ -24,7 +24,7 @@ p{
     gap: 1rem;
 }
 
-.buttons .btn, .buttons .reset{
+.buttons .btn, .buttons .reset, .buttons .rgb{
     font-size: 18px;
     padding: 10px;
     border-radius: 10px;
