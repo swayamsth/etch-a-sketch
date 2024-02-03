@@ -3,6 +3,7 @@ const container = document.querySelector("#container");
 let maxGrid = 500;
 let gridSize = 16;
 let grid = gridSize * gridSize;
+let rainbowMode = false;
 
 resetGrid();
 createGrid(grid);
@@ -26,7 +27,7 @@ btn.addEventListener('click', () => {
         grid = gridSize * gridSize;
         resetGrid();
         createGrid(grid);
-        isBlack();
+        chooseMode(rainbowMode);
     } else {
         alert("Maximum Limit Exceeded!")
     }
@@ -37,7 +38,7 @@ const reset = document.querySelector(".reset");
 reset.addEventListener('click', () => {
     resetGrid();
     createGrid(grid);
-    isBlack();
+    chooseMode(rainbowMode);
 })
 
 //Create Grid func
@@ -69,9 +70,10 @@ function getRandomColor() {
     return color;
 }
 
-//console call
+//rainbowMode button
 const randomColor = document.querySelector(".rgb");
 randomColor.addEventListener('click', (e) => {
+    rainbowMode = true;
     isRainbow();
 })
 
@@ -84,4 +86,13 @@ function isRainbow(){
             e.target.style.backgroundColor = getRandomColor();
         })
     });
+}
+
+//Choose mode
+function chooseMode(rainbowMode){
+    if (rainbowMode == true){
+        isRainbow();
+    } else {
+        isBlack();
+    }
 }
