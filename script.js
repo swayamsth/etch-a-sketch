@@ -6,10 +6,10 @@ let grid = gridSize * gridSize;
 
 resetGrid();
 createGrid(grid);
-hover();
+isBlack();
 
 // Set hover state
-function hover(){
+function isBlack(){
     const hover = document.querySelectorAll(".grid");
     hover.forEach(item => {
         item.addEventListener('mouseover', (e) => {
@@ -26,7 +26,7 @@ btn.addEventListener('click', () => {
         grid = gridSize * gridSize;
         resetGrid();
         createGrid(grid);
-        hover();
+        isBlack();
     } else {
         alert("Maximum Limit Exceeded!")
     }
@@ -37,7 +37,7 @@ const reset = document.querySelector(".reset");
 reset.addEventListener('click', () => {
     resetGrid();
     createGrid(grid);
-    hover();
+    isBlack();
 })
 
 //Create Grid func
@@ -72,5 +72,16 @@ function getRandomColor() {
 //console call
 const randomColor = document.querySelector(".rgb");
 randomColor.addEventListener('click', (e) => {
-    console.log(getRandomColor());
+    isRainbow();
 })
+
+//rainbow mode
+function isRainbow(){
+    const hover = document.querySelectorAll(".grid");
+    hover.forEach(item => {
+        item.addEventListener('mouseover', (e) => {
+            e.target.classList.add("hover");
+            e.target.style.backgroundColor = getRandomColor();
+        })
+    });
+}
