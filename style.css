@@ -24,7 +24,7 @@ p{
     gap: 1rem;
 }
 
-.buttons .btn, .buttons .reset, .buttons .rgb{
+.buttons .btn, .buttons .reset, .buttons .rgb, .buttons .black{
     font-size: 18px;
     padding: 10px;
     border-radius: 10px;

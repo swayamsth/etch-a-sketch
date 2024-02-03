@@ -15,6 +15,7 @@ function isBlack(){
     hover.forEach(item => {
         item.addEventListener('mouseover', (e) => {
             e.target.classList.add("hover");
+            e.target.style.backgroundColor = "black";
         })
     });
 }
@@ -96,3 +97,10 @@ function chooseMode(rainbowMode){
         isBlack();
     }
 }
+
+// Black color button
+const blackColor = document.querySelector(".black");
+blackColor.addEventListener('click', (e) => {
+    rainbowMode = false;
+    chooseMode(rainbowMode);
+})
